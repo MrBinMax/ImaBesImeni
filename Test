@@ -1,0 +1,29 @@
+import tkinter as tk
+from tkinter import ttk
+
+def on_submit():
+    fruit = combo.get()
+    weight = entry.get()
+    print("Фрукт: ", fruit)
+    print("Вес: ",weight," кг" )
+
+root = tk.Tk()
+root.title("Fruit Order")
+
+label = ttk.Label(root, text="Выбрать фрукт:")
+label.pack()
+
+fruits = ["Яблоко", "Банан", "Апельсин", "Манго"]
+combo = ttk.Combobox(root, values=fruits)
+combo.pack()
+
+label2 = ttk.Label(root, text="Введите вес:")
+label2.pack()
+
+entry = ttk.Entry(root)
+entry.pack()
+
+button = ttk.Button(root, text="Заказать", command=on_submit)
+button.pack()
+
+root.mainloop()
